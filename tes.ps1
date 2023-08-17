@@ -11,7 +11,7 @@ Invoke-WebRequest https://github.com/fukkoff184/testup/raw/main/brat.iso -OutFil
 Start-Sleep -s 5
 
 # Montando a ISO
-$caminhodoISO = "$caminho" + ""brat.iso""
+$caminhodoISO = "$caminho" `+ "brat.iso"
 Mount-DiskImage -ImagePath $caminhodoISO -StorageType ISO -Access ReadOnly
 $keep = Get-Volume -FileSystemLabel "BRAT"
 $driveLetter = ($keep | Get-Volume).DriveLetter
